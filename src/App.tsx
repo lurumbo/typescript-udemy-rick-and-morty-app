@@ -1,6 +1,6 @@
 import React from 'react';
 import { Store } from './Store';
-import { IAction, IEpisode } from './interfaces';
+import { IAction, IEpisode, IEpisodeProps } from './interfaces';
 import './App.css';
 import Spinner from './Spinner';
 
@@ -44,7 +44,7 @@ export default function App(): JSX.Element {
     return state.favourites.find((fav: IEpisode) => fav.id === episode.id) ? true : false;
   }
 
-  const props = {
+  const props: IEpisodeProps = {
     episodes: state.episodes,
     isFav,
     addFavAction,

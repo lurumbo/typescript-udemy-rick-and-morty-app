@@ -23,3 +23,10 @@ export interface IEpisode {
     season: number,
     summary: string
 }
+
+export interface IEpisodeProps {
+    episodes: Array<IEpisode>,
+    isFav: (episode: IEpisode) => boolean,
+    addFavAction: (episode: IEpisode) => IAction,
+    subFavAction: (episode: IEpisode) => IAction,
+}
