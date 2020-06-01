@@ -26,7 +26,8 @@ export interface IEpisode {
 
 export interface IEpisodeProps {
     episodes: Array<IEpisode>,
-    isFav: (episode: IEpisode) => boolean,
-    addFavAction: (episode: IEpisode) => IAction,
-    subFavAction: (episode: IEpisode) => IAction,
+    favourites: Array<IEpisode>,
+    store: { state: IState, dispatch: any },
+    toggleFavAction: (state: IState, dispatch: any, episode: IEpisode) => IAction,
+    isFav: (state: IState, episode: IEpisode) => boolean,
 }

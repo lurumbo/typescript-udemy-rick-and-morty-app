@@ -1,9 +1,11 @@
 import React from 'react';
 import { IEpisode } from './interfaces';
+import { toggleFavAction } from './Actions';
 
 export default function EpisodesList(props: any): JSX.Element {
 
-    const { episodes, isFav, addFavAction, subFavAction } = props;
+    const { episodes, isFav, addFavAction, subFavAction, store } = props;
+    const { state, dispatch } = store;
 
     return episodes.map((episode: IEpisode) => {
         return (
@@ -20,9 +22,9 @@ export default function EpisodesList(props: any): JSX.Element {
               </span>
               <button 
                 type="button"
-                onClick={() => { isFav(episode) ? subFavAction(episode) : addFavAction(episode) }}>
+                onClick={() => { toggleFavAction(state, dispatch, episode) }}>
                   {
-                    isFav(episode) ? '- Fav' : '+ Fav'
+                    isFav(state, episode) ? '- Fav' : '+ Fav'
                   }
               </button>
             </div>
