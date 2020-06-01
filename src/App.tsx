@@ -11,7 +11,7 @@ export default function App(props: any): JSX.Element {
         <React.Fragment>
             <header className="header">
                 <div>
-                    <h1>Rick and Morty</h1>
+                    <h1><a href="/">Rick and Morty</a></h1>
                     <p>Pick your favourite episode!</p>
                 </div>
                 <div>

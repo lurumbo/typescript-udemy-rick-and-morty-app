@@ -4,7 +4,7 @@ import { toggleFavAction } from './Actions';
 
 export default function EpisodesList(props: any): JSX.Element {
 
-    const { episodes, isFav, addFavAction, subFavAction, store } = props;
+    const { episodes, isFav, store } = props;
     const { state, dispatch } = store;
 
     return episodes.map((episode: IEpisode) => {
